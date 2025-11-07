@@ -3009,18 +3009,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2380876302036086030, guid: 003e4866f4747dc48bb35a9967a48871, type: 3}
-      propertyPath: m_Size.y
-      value: 1.2039642
-      objectReference: {fileID: 0}
-    - target: {fileID: 2380876302036086030, guid: 003e4866f4747dc48bb35a9967a48871, type: 3}
-      propertyPath: m_Center.x
-      value: -0.0024940968
-      objectReference: {fileID: 0}
-    - target: {fileID: 2380876302036086030, guid: 003e4866f4747dc48bb35a9967a48871, type: 3}
-      propertyPath: m_Center.y
-      value: 0.6019821
-      objectReference: {fileID: 0}
     - target: {fileID: 4276122732935556238, guid: 003e4866f4747dc48bb35a9967a48871, type: 3}
       propertyPath: m_Name
       value: barbecue (1)
