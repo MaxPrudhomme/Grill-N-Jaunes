@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1388885393123222635}
   - component: {fileID: 1106779297224969212}
   - component: {fileID: 450916179138830527}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Audio Affordance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8053229108961218718}
   - component: {fileID: 4779177523088909608}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Interaction Affordance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 6607614843283595083}
   - component: {fileID: 3705605030026684696}
   - component: {fileID: 643821553989527579}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Color Affordance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: 4758582628751739117}
   - component: {fileID: 77677643905244104}
   - component: {fileID: 6809271558235152293}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -467,7 +467,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3918029167026217640}
   - component: {fileID: 4414930423830038312}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder_COL
   m_TagString: Cookable
   m_Icon: {fileID: 0}
@@ -592,6 +592,10 @@ PrefabInstance:
       value: Sausage
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: bf65382e5e6d14e7f8140e4204ce07e2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: bf65382e5e6d14e7f8140e4204ce07e2, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -627,6 +631,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: bf65382e5e6d14e7f8140e4204ce07e2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4876955561989867963}
+    - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: bf65382e5e6d14e7f8140e4204ce07e2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4433956298737610453}
   m_SourcePrefab: {fileID: 100100000, guid: bf65382e5e6d14e7f8140e4204ce07e2, type: 3}
 --- !u!4 &5335692636472798814 stripped
 Transform:
@@ -832,3 +839,16 @@ MonoBehaviour:
   - {fileID: 2100000, guid: a64403ad2695e5e4ea806f40cf882c8f, type: 2}
   - {fileID: 2100000, guid: d7a7322e29b88b34d8ba3c0995c0749a, type: 2}
   - {fileID: 2100000, guid: 0aab0b2fd65f43f45bf88d355f4d0fe5, type: 2}
+--- !u!114 &4433956298737610453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8959746489164635213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef4db54c79b16524cbeddb123f4a5d12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Consumable
+  objectName: Sausage
