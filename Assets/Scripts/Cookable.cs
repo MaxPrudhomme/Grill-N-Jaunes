@@ -28,7 +28,7 @@ public class Cookable : MonoBehaviour
 
     public void IsCooked(float value)
     {
-        print(cookPoint);
+        //print(cookPoint);
         cookPoint += value;
     }
 }

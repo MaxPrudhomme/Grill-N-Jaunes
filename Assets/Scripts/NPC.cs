@@ -1,6 +1,8 @@
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using System.Threading;
 using TMPro;
 using UnityEngine;
 
@@ -10,7 +12,9 @@ public class NPC : MonoBehaviour
     [SerializeField] private List<Consumable> consumablesAsked;
     [SerializeField] private TextMeshPro commandText;
 
+    public CommandeManager manager;
     private List<string> command;
+  
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
