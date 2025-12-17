@@ -29,9 +29,32 @@ public class Cookable : MonoBehaviour
         }
     }
 
+    public void CheckSocket()
+    {
+        if(cookPoint <10 && cookPoint >= 5)
+        {
+            Collider[] hits = Physics.OverlapSphere(transform.position, 0.1f);
+            foreach (Collider hit in hits)
+            {
+                if(hit.CompareTag("Socket"))
+                {
+                    transform.position = hit.gameObject.transform.GetChild(hit.gameObject.transform.childCount - 1).position;
+                    transform.rotation = hit.gameObject.transform.GetChild(hit.gameObject.transform.childCount - 1).rotation;
+                    Destroy(transform.GetComponent<Rigidbody>());
+                    hit.gameObject.transform.GetChild(hit.gameObject.transform.childCount - 2).gameObject.SetActive(false);
+                }
+            }
+        }
+    }
+
     public void IsCooked(float value)
     {
         //print(cookPoint);
         cookPoint += value;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(transform.position, 0.1f);
     }
 }
