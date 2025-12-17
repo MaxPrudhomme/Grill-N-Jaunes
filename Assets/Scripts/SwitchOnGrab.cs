@@ -8,6 +8,7 @@ public class SwitchOnGrab : MonoBehaviour
     [SerializeField] private GameObject prefabToSpawn;
 
     private XRGrabInteractable grab;
+    private bool alreadySpawned = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,17 +31,19 @@ public class SwitchOnGrab : MonoBehaviour
             transform.rotation
         );
 
+        var interactor = args.interactorObject;
         XRGrabInteractable newGrab = spawned.GetComponent<XRGrabInteractable>();
 
-        if (newGrab == null)
+        grab.interactionManager.SelectExit(interactor, grab);
+
+        if (alreadySpawned || prefabToSpawn == null)
             return;
 
-        var interactor = args.interactorObject;
-        var interactable = newGrab;
+        alreadySpawned = true;
 
-        if (interactor != null && interactable != null)
+        if (interactor != null && newGrab != null)
         {
-            grab.interactionManager.SelectEnter(interactor, interactable);
+            grab.interactionManager.SelectEnter(interactor, newGrab);
         }
     }
 }
