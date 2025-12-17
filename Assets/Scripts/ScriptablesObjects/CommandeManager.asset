@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f094e044bcf1c2f4e856f1c7668c7de4, type: 3}
   m_Name: CommandeManager
   m_EditorClassIdentifier: Assembly-CSharp::CommandeManagerScriptableObject
-  maxHungerThreshold: 0
+  maxHungerThreshold: 100
+  difficultyScaling: 0
+  spawnPoints:
+  - {x: 0, y: 10}
+  - {x: -20, y: 10}
