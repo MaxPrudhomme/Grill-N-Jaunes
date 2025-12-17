@@ -16,7 +16,7 @@ public class CommandeManager: MonoBehaviour
     private Vector2 newSpawnPoint2D = Vector2.zero;
     private List<(Vector2, bool)> spawnPoints = new List<(Vector2, bool)>();
     private List<Vector2> availableSpawnPoints = new List<Vector2>();
-
+    private int spawnPointsIndex;
 
     private float timer = 0f;
 
@@ -45,14 +45,28 @@ public class CommandeManager: MonoBehaviour
                 if (Random.Range(0, 20) >= difficulty)
                 {
                     commande = Instantiate(commandePrefab);
+                    spawnPointsIndex = Random.Range(0, spawnPoints.Count);
+                    if (!spawnPoints[spawnPointsIndex].Item2)
+                    {
+                        spawnPoints[spawnPointsIndex] = (spawnPoints[spawnPointsIndex].Item1, true);
+
+                        newSpawnPoint2D = spawnPoints[spawnPointsIndex].Item1;
+                        newSpawnPoint.x = newSpawnPoint2D.x;
+                        newSpawnPoint.y = 2;
+                        newSpawnPoint.z = newSpawnPoint2D.y;
+
+
+                        commande.transform.position = newSpawnPoint;
+                        commande.GetComponent<NPC>().isCompleted += orderCompleted;
+                        commande.GetComponent<NPC>().index = spawnPointsIndex;
+
+                        Debug.Log("Spawn");
+                        nbCommandes++;
+                    }
+                    else{
+                        Debug.Log("Cant spawn");
+                    }
                     
-                    newSpawnPoint2D = spawnPoints[Random.Range(0, spawnPoints.Count - 1)].Item1;
-                    newSpawnPoint.x = newSpawnPoint2D.x;
-                    newSpawnPoint.y = 2;
-                    newSpawnPoint.z = newSpawnPoint2D.y;
-                    commande.transform.position = newSpawnPoint;
-                    Debug.Log("Spawn");
-                    nbCommandes++;
                 }
             }
         }
@@ -65,5 +79,11 @@ public class CommandeManager: MonoBehaviour
         {
             Debug.Log("GameOver");
         }
+    }
+
+    private void orderCompleted(int index)
+    {
+        spawnPoints[index] = (spawnPoints[index].Item1, false);
+        nbCommandes--;
     }
 }
