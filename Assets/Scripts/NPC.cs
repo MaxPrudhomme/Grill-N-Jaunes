@@ -15,6 +15,9 @@ public class NPC : MonoBehaviour
     public CommandeManager manager;
     private List<string> command;
     private float timer = 0;
+    public int index;
+
+    public event Action<int> isCompleted;
   
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -50,6 +53,7 @@ public class NPC : MonoBehaviour
                 if (command.Count == 0)
                 {
                     commandText.gameObject.SetActive(false);
+                    isCompleted.Invoke(index);
                     Debug.Log("command finished");
                 }
                 Destroy(other.gameObject);
