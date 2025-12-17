@@ -7,15 +7,17 @@ public class SpawnSausage : MonoBehaviour
 {
     [SerializeField] private GameObject prefabToSpawn;
 
-    private XRGrabInteractable simple;
+    //private XRGrabInteractable simple;
+    private XRSimpleInteractable simple;
     private Collider[] myColliders;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        simple = GetComponent<XRGrabInteractable>();
-        simple.selectEntered.AddListener(OnSelect);
+        //simple = GetComponent<XRGrabInteractable>();
+        simple = GetComponent<XRSimpleInteractable>();
         myColliders = GetComponentsInChildren<Collider>();
+        simple.selectEntered.AddListener(OnSelect);
     }
     void OnDestroy()
     {
@@ -47,5 +49,36 @@ public class SpawnSausage : MonoBehaviour
         {
             grab.interactionManager.SelectEnter(interactor, grab);
         }
+
+        //if (prefabToSpawn == null) return;
+
+        //GameObject spawned = Instantiate(
+        //    prefabToSpawn,
+        //    transform.position,
+        //    transform.rotation
+        //);
+
+        //Collider[] spawnedColliders = spawned.GetComponentsInChildren<Collider>();
+
+        //foreach (var a in myColliders)
+        //{
+        //    foreach (var b in spawnedColliders)
+        //    {
+        //        Physics.IgnoreCollision(a, b, true);
+        //    }
+        //}
+
+        //XRGrabInteractable newGrab = spawned.GetComponent<XRGrabInteractable>();
+
+        //if (newGrab == null)
+        //    return;
+
+        //var interactor = args.interactorObject;
+        //var interactable = newGrab;
+
+        //if (interactor != null && interactable != null)
+        //{
+        //    simple.interactionManager.SelectEnter(interactor, interactable);
+        //}
     }
 }

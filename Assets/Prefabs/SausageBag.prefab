@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2308008998331917012}
   - component: {fileID: 6276159049150525339}
   - component: {fileID: 7814501914100017169}
-  - component: {fileID: 7014773747450692745}
+  - component: {fileID: 7466432880928620447}
   m_Layer: 0
   m_Name: SausageBag
   m_TagString: Untagged
@@ -138,9 +138,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 126
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &7814501914100017169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,7 +213,7 @@ MonoBehaviour:
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_StartingInteractionStrengthFilters: []
---- !u!114 &7014773747450692745
+--- !u!114 &7466432880928620447
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -224,5 +224,5 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48fedd68b6a592a4885e85d837ccadf0, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SwitchOnGrab
-  prefabToSpawn: {fileID: 8959746489164635213, guid: 116a3057872c30b4583bdb6f6d0dbebe, type: 3}
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnSausage
+  prefabToSpawn: {fileID: 8959746489164635213, guid: b36ad896f498002498fc1ef89dd1676f, type: 3}
