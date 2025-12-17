@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Cookable : MonoBehaviour
 {
-    [SerializeField] private MeshRenderer meshRenderer;
+    [SerializeField] private SkinnedMeshRenderer[] meshRenderer;
     [SerializeField] private Material[] cookedMaterials;
 
     private float cookPoint = 0;
@@ -10,7 +10,8 @@ public class Cookable : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        meshRenderer.material = cookedMaterials[0];
+        foreach(SkinnedMeshRenderer renderer in meshRenderer)
+            renderer.material = cookedMaterials[0];
     }
 
     // Update is called once per frame
@@ -18,11 +19,13 @@ public class Cookable : MonoBehaviour
     {
         if (cookPoint >= 10)
         {
-            meshRenderer.material = cookedMaterials[2];
+            foreach (SkinnedMeshRenderer renderer in meshRenderer)
+                renderer.material = cookedMaterials[2];
         }
         else if (cookPoint >= 5)
         {
-            meshRenderer.material = cookedMaterials[1];
+            foreach (SkinnedMeshRenderer renderer in meshRenderer)
+                renderer.material = cookedMaterials[1];
         }
     }
 
