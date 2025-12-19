@@ -33,7 +33,6 @@ public class SpawnSausage : MonoBehaviour
         );
 
         Collider[] spawnedColliders = spawned.GetComponentsInChildren<Collider>();
-
         foreach (var a in myColliders)
         {
             foreach (var b in spawnedColliders)
@@ -42,43 +41,72 @@ public class SpawnSausage : MonoBehaviour
             }
         }
 
-        IXRSelectInteractor interactor = args.interactorObject;
-        var grab = spawned.GetComponent<XRGrabInteractable>();
+        XRBaseInteractor baseInteractor = args.interactorObject as XRBaseInteractor;
+        XRGrabInteractable grab = spawned.GetComponent<XRGrabInteractable>();
 
-        if (interactor != null && grab != null)
+        if (baseInteractor != null && grab != null)
         {
-            grab.interactionManager.SelectEnter(interactor, grab);
+            baseInteractor.interactionManager.SelectExit(baseInteractor, args.interactableObject);
+            baseInteractor.interactionManager.SelectEnter(baseInteractor, (IXRSelectInteractable)grab);
         }
-
-        //if (prefabToSpawn == null) return;
-
-        //GameObject spawned = Instantiate(
-        //    prefabToSpawn,
-        //    transform.position,
-        //    transform.rotation
-        //);
-
-        //Collider[] spawnedColliders = spawned.GetComponentsInChildren<Collider>();
-
-        //foreach (var a in myColliders)
-        //{
-        //    foreach (var b in spawnedColliders)
-        //    {
-        //        Physics.IgnoreCollision(a, b, true);
-        //    }
-        //}
-
-        //XRGrabInteractable newGrab = spawned.GetComponent<XRGrabInteractable>();
-
-        //if (newGrab == null)
-        //    return;
-
-        //var interactor = args.interactorObject;
-        //var interactable = newGrab;
-
-        //if (interactor != null && interactable != null)
-        //{
-        //    simple.interactionManager.SelectEnter(interactor, interactable);
-        //}
     }
+
+
+    //private void OnSelect(SelectEnterEventArgs args)
+    //{
+    //    GameObject spawned = Instantiate(
+    //        prefabToSpawn,
+    //        transform.position,
+    //        transform.rotation
+    //    );
+
+    //    Collider[] spawnedColliders = spawned.GetComponentsInChildren<Collider>();
+
+    //    foreach (var a in myColliders)
+    //    {
+    //        foreach (var b in spawnedColliders)
+    //        {
+    //            Physics.IgnoreCollision(a, b, true);
+    //        }
+    //    }
+
+    //    IXRSelectInteractor interactor = args.interactorObject;
+    //    var grab = spawned.GetComponent<XRGrabInteractable>();
+
+    //    if (interactor != null && grab != null)
+    //    {
+    //        grab.interactionManager.SelectEnter(interactor, grab);
+    //    }
+
+    //    //if (prefabToSpawn == null) return;
+
+    //    //GameObject spawned = Instantiate(
+    //    //    prefabToSpawn,
+    //    //    transform.position,
+    //    //    transform.rotation
+    //    //);
+
+    //    //Collider[] spawnedColliders = spawned.GetComponentsInChildren<Collider>();
+
+    //    //foreach (var a in myColliders)
+    //    //{
+    //    //    foreach (var b in spawnedColliders)
+    //    //    {
+    //    //        Physics.IgnoreCollision(a, b, true);
+    //    //    }
+    //    //}
+
+    //    //XRGrabInteractable newGrab = spawned.GetComponent<XRGrabInteractable>();
+
+    //    //if (newGrab == null)
+    //    //    return;
+
+    //    //var interactor = args.interactorObject;
+    //    //var interactable = newGrab;
+
+    //    //if (interactor != null && interactable != null)
+    //    //{
+    //    //    simple.interactionManager.SelectEnter(interactor, interactable);
+    //    //}
+    //}
 }
