@@ -4,6 +4,7 @@ public class Cookable : MonoBehaviour
 {
     [SerializeField] private SkinnedMeshRenderer[] meshRenderer;
     [SerializeField] private Material[] cookedMaterials;
+    [SerializeField] private Transform socket;
 
     private float cookPoint = 0;
 
@@ -41,7 +42,8 @@ public class Cookable : MonoBehaviour
                     transform.position = hit.gameObject.transform.GetChild(hit.gameObject.transform.childCount - 1).position;
                     transform.rotation = hit.gameObject.transform.GetChild(hit.gameObject.transform.childCount - 1).rotation;
                     Destroy(transform.GetComponent<Rigidbody>());
-                    hit.gameObject.transform.GetChild(hit.gameObject.transform.childCount - 2).gameObject.SetActive(false);
+                    transform.GetChild(hit.gameObject.transform.childCount - 2).gameObject.SetActive(false);
+                    return;
                 }
             }
         }
