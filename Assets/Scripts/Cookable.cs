@@ -36,8 +36,8 @@ public class Cookable : MonoBehaviour
             cookPoint = 6;
             CheckSocket();
         }
-        */
-            
+        
+            */
     }
 
     public void CheckSocket()
@@ -53,11 +53,12 @@ public class Cookable : MonoBehaviour
                 if (hit.CompareTag("Socket"))
                 {
                     Debug.Log( hit.gameObject.name+" is socket");
-                    transform.position = hit.gameObject.transform.parent.GetChild(hit.gameObject.transform.parent.childCount - 1).position;
-                    transform.rotation = hit.gameObject.transform.parent.GetChild(hit.gameObject.transform.parent.childCount - 1).rotation;
                     Destroy(transform.GetComponent<XRGrabInteractable>());
                     Destroy(transform.GetComponent<Rigidbody>());
                     transform.GetChild(transform.childCount - 2).gameObject.SetActive(false);
+                    transform.parent = hit.gameObject.transform;
+                    transform.position = hit.gameObject.transform.parent.GetChild(hit.gameObject.transform.parent.childCount - 1).position;
+                    transform.rotation = hit.gameObject.transform.parent.GetChild(hit.gameObject.transform.parent.childCount - 1).rotation;
                     Debug.Log(hit.gameObject.name + " socketed");
                     return;
                 }
