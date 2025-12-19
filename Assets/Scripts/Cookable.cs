@@ -7,6 +7,7 @@ public class Cookable : MonoBehaviour
     [SerializeField] private Material[] cookedMaterials;
     [SerializeField] private Transform socket;
 
+    public bool check = false;
     private float cookPoint = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -29,6 +30,14 @@ public class Cookable : MonoBehaviour
             foreach (SkinnedMeshRenderer renderer in meshRenderer)
                 renderer.material = cookedMaterials[1];
         }
+        /*
+        if (Input.GetKeyDown(KeyCode.Space) && check)
+        {
+            cookPoint = 6;
+            CheckSocket();
+        }
+        */
+            
     }
 
     public void CheckSocket()
@@ -44,11 +53,11 @@ public class Cookable : MonoBehaviour
                 if (hit.CompareTag("Socket"))
                 {
                     Debug.Log( hit.gameObject.name+" is socket");
-                    transform.position = hit.gameObject.transform.parent.GetChild(hit.gameObject.transform.childCount - 1).position;
-                    transform.rotation = hit.gameObject.transform.parent.GetChild(hit.gameObject.transform.childCount - 1).rotation;
+                    transform.position = hit.gameObject.transform.parent.GetChild(hit.gameObject.transform.parent.childCount - 1).position;
+                    transform.rotation = hit.gameObject.transform.parent.GetChild(hit.gameObject.transform.parent.childCount - 1).rotation;
                     Destroy(transform.GetComponent<XRGrabInteractable>());
                     Destroy(transform.GetComponent<Rigidbody>());
-                    transform.GetChild(hit.gameObject.transform.childCount - 2).gameObject.SetActive(false);
+                    transform.GetChild(transform.childCount - 2).gameObject.SetActive(false);
                     Debug.Log(hit.gameObject.name + " socketed");
                     return;
                 }
