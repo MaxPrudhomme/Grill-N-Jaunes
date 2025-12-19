@@ -8,7 +8,7 @@ public class Cookable : MonoBehaviour
     [SerializeField] private Transform socket;
 
     public bool check = false;
-    private float cookPoint = 0;
+    public float cookPoint = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -38,34 +38,6 @@ public class Cookable : MonoBehaviour
         }
         */
             
-    }
-
-    public void CheckSocket()
-    {
-        Debug.Log("Check socket");
-        if(cookPoint <10 && cookPoint >= 5)
-        {
-            Debug.Log("Check is cooked");
-            Collider[] hits = Physics.OverlapSphere(transform.position, 0.1f);
-            foreach (Collider hit in hits)
-            {
-                Debug.Log("Check socket"+hit.gameObject.name);
-                if (hit.CompareTag("Socket"))
-                {
-                    Debug.Log( hit.gameObject.name+" is socket");
-                    Destroy(transform.GetComponent<XRGrabInteractable>());
-                    Destroy(transform.GetComponent<Rigidbody>());
-                    transform.GetChild(transform.childCount - 2).gameObject.SetActive(false);
-                    transform.parent = hit.gameObject.transform.parent.GetChild(hit.gameObject.transform.parent.childCount - 1);
-                    transform.position = hit.gameObject.transform.parent.GetChild(hit.gameObject.transform.parent.childCount - 1).position;
-                    transform.localRotation = Quaternion.identity;
-                    Debug.Log(hit.gameObject.name + " socketed");
-                    return;
-                }
-            }
-        }
-        else
-            Debug.Log("Check is not cooked");
     }
 
     public void IsCooked(float value)
