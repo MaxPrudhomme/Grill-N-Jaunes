@@ -18,7 +18,7 @@ public class Sauce : MonoBehaviour
         {
             part.gameObject.SetActive(true);
 
-            if(Physics.SphereCast(transform.position+ transform.up*0.5f, 0.1f, Vector3.up, out RaycastHit hit, 10f))
+            if(Physics.SphereCast(transform.position+ transform.up*0.05f, 0.1f, Vector3.up, out RaycastHit hit, 10f))
             {
                 if(hit.collider.CompareTag("Socket"))
                 {
