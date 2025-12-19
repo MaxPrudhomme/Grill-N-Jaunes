@@ -86,4 +86,12 @@ public class CommandeManager: MonoBehaviour
         spawnPoints[index] = (spawnPoints[index].Item1, false);
         nbCommandes--;
     }
+
+    public void OnDrawGizmos()
+    {
+        foreach ((Vector2,bool) point in spawnPoints) 
+        {
+            Gizmos.DrawIcon(new Vector3(point.Item1.x,2, point.Item1.y),"d");
+        }
+    }
 }
