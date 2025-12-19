@@ -44,8 +44,8 @@ public class Cookable : MonoBehaviour
                 if (hit.CompareTag("Socket"))
                 {
                     Debug.Log( hit.gameObject.name+" is socket");
-                    transform.position = hit.gameObject.transform.GetChild(hit.gameObject.transform.childCount - 1).position;
-                    transform.rotation = hit.gameObject.transform.GetChild(hit.gameObject.transform.childCount - 1).rotation;
+                    transform.position = hit.gameObject.transform.parent.GetChild(hit.gameObject.transform.childCount - 1).position;
+                    transform.rotation = hit.gameObject.transform.parent.GetChild(hit.gameObject.transform.childCount - 1).rotation;
                     Destroy(transform.GetComponent<XRGrabInteractable>());
                     Destroy(transform.GetComponent<Rigidbody>());
                     transform.GetChild(hit.gameObject.transform.childCount - 2).gameObject.SetActive(false);
