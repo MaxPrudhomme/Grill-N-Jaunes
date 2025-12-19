@@ -3,7 +3,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
-public class SpawnSausage : MonoBehaviour
+public class Spawner : MonoBehaviour
 {
     [SerializeField] private GameObject prefabToSpawn;
 

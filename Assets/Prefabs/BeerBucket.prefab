@@ -656,7 +656,7 @@ GameObject:
   - component: {fileID: 7814501914100017169}
   - component: {fileID: 7466432880928620447}
   m_Layer: 0
-  m_Name: SausageBucket
+  m_Name: BeerBucket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -812,7 +812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48fedd68b6a592a4885e85d837ccadf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnSausage
-  prefabToSpawn: {fileID: 8959746489164635213, guid: b36ad896f498002498fc1ef89dd1676f, type: 3}
+  prefabToSpawn: {fileID: 4086965472890682685, guid: cbafcf2ef5cd9174eb8a76b7b2b18e5c, type: 3}
 --- !u!1 &3766230055626705237
 GameObject:
   m_ObjectHideFlags: 0
