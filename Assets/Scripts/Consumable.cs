@@ -10,7 +10,7 @@ public class Consumable : MonoBehaviour
     private bool k = false;
     private bool m = false;
 
-
+    public bool test = false;
     public string getObjectName()
     {
         return objectName;
@@ -25,7 +25,11 @@ public class Consumable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space) && test)
+        {
+            
+            CheckSocket();
+        }
     }
 
     public void CheckSocket()
@@ -44,18 +48,18 @@ public class Consumable : MonoBehaviour
                     Debug.Log("Check socket" + hit.gameObject.name);
                     if (hit.CompareTag("Socket"))
                     {
-                        if (!hit.GetComponent<Consumable>().filled)
+                        if (!hit.transform.parent.GetComponent<Consumable>().filled)
                         { 
                             Debug.Log(hit.gameObject.name + " is socket");
                             Destroy(transform.GetComponent<XRGrabInteractable>());
                             Destroy(transform.GetComponent<Rigidbody>());
-                            transform.GetChild(transform.childCount - 2).gameObject.SetActive(false);
+                            transform.GetChild(transform.childCount - 1).gameObject.SetActive(false);
                             transform.parent = hit.gameObject.transform.parent.GetChild(hit.gameObject.transform.parent.childCount - 1);
                             transform.position = hit.gameObject.transform.parent.GetChild(hit.gameObject.transform.parent.childCount - 1).position;
                             transform.localRotation = Quaternion.identity;
                             filled = true;
                             Debug.Log(hit.gameObject.name + " socketed");
-                            objectName = "HotDog";
+                            hit.transform.parent.GetComponent<Consumable>().objectName = "HotDog";
                             return;
                         }
                     }

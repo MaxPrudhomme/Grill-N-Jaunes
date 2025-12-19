@@ -20,9 +20,10 @@ public class Sauce : MonoBehaviour
 
             if(Physics.SphereCast(transform.position+ transform.up*0.5f, 0.1f, Vector3.up, out RaycastHit hit, 10f))
             {
-                if(hit.collider.CompareTag("Socket") || hit.collider.CompareTag("Cookable"))
+                if(hit.collider.CompareTag("Socket"))
                 {
-                    hit.transform.GetComponent<Consumable>().Sauce(sauce);
+                    Debug.Log(hit.collider.gameObject.name + "/" + hit.collider.transform.parent.gameObject.name);
+                    hit.collider.transform.parent.GetComponent<Consumable>().Sauce(sauce);
                 }
             }
         }
