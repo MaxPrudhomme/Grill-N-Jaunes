@@ -17,6 +17,7 @@ public class CommandeManager: MonoBehaviour
     private List<(Vector2, bool)> spawnPoints = new List<(Vector2, bool)>();
     private List<Vector2> availableSpawnPoints = new List<Vector2>();
     private int spawnPointsIndex;
+    private const float TIME_INTERVAL = 2f;
 
     private float timer = 0f;
 
@@ -37,7 +38,7 @@ public class CommandeManager: MonoBehaviour
     {
         int i = 0;
         timer+= Time.deltaTime;
-        if(timer >= 0.5f)
+        if(timer >= TIME_INTERVAL)
         {
             timer = 0;
             if (nbCommandes<maxCommandes)
@@ -59,6 +60,8 @@ public class CommandeManager: MonoBehaviour
                         commande.transform.position = newSpawnPoint;
                         commande.GetComponent<NPC>().isCompleted += orderCompleted;
                         commande.GetComponent<NPC>().index = spawnPointsIndex;
+
+                        commande.transform.rotation = Quaternion.LookRotation(commande.transform.position - new Vector3(-10, commande.transform.position.y, 0));
 
                         Debug.Log("Spawn");
                         nbCommandes++;
