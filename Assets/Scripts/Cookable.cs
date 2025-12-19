@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class Cookable : MonoBehaviour
 {
@@ -32,21 +33,29 @@ public class Cookable : MonoBehaviour
 
     public void CheckSocket()
     {
+        Debug.Log("Check socket");
         if(cookPoint <10 && cookPoint >= 5)
         {
+            Debug.Log("Check is cooked");
             Collider[] hits = Physics.OverlapSphere(transform.position, 0.1f);
             foreach (Collider hit in hits)
             {
-                if(hit.CompareTag("Socket"))
+                Debug.Log("Check socket"+hit.gameObject.name);
+                if (hit.CompareTag("Socket"))
                 {
+                    Debug.Log( hit.gameObject.name+" is socket");
                     transform.position = hit.gameObject.transform.GetChild(hit.gameObject.transform.childCount - 1).position;
                     transform.rotation = hit.gameObject.transform.GetChild(hit.gameObject.transform.childCount - 1).rotation;
+                    Destroy(transform.GetComponent<XRGrabInteractable>());
                     Destroy(transform.GetComponent<Rigidbody>());
                     transform.GetChild(hit.gameObject.transform.childCount - 2).gameObject.SetActive(false);
+                    Debug.Log(hit.gameObject.name + " socketed");
                     return;
                 }
             }
         }
+        else
+            Debug.Log("Check is not cooked");
     }
 
     public void IsCooked(float value)
