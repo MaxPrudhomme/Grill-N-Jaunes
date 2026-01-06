@@ -47,7 +47,16 @@ public class NPC : MonoBehaviour
         // TODO: activeBulle
     }
 
+    
+
     //A refaire
+
+    //Si collide : 
+    //  Si collider = consumable :
+    //      Si bière : 
+    //          Augmenter la colère de ~10
+    //          Compléter commande
+    //      Check les ingédients
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("collide");
