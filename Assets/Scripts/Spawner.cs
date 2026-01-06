@@ -5,7 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private GameObject prefabToSpawn;
+    public GameObject prefabToSpawn;
 
     //private XRGrabInteractable simple;
     private XRSimpleInteractable simple;
@@ -47,16 +47,17 @@ public class Spawner : MonoBehaviour
         if (baseInteractor != null && grab != null)
         {
             baseInteractor.interactionManager.SelectExit(baseInteractor, args.interactableObject);
-
-            XRRayInteractor rayInteractor = baseInteractor as XRRayInteractor;
-            if (rayInteractor != null)
-            {
-                // Le XRGrabInteractable doit avoir un attachTransform pour le ray
-                grab.attachTransform = spawned.transform;
-            }
-
             baseInteractor.interactionManager.SelectEnter(baseInteractor, (IXRSelectInteractable)grab);
 
         }
+    }
+
+    public GameObject SpawnObject()
+    {
+        return Instantiate(
+            prefabToSpawn,
+            transform.position,
+            transform.rotation
+        );
     }
 }
