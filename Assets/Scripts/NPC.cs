@@ -6,7 +6,12 @@ using System.Threading;
 using TMPro;
 using UnityEngine;
 
-
+public enum SauceAliment
+{
+    Moutarde,
+    Ketchup,
+    Rien
+}
 public class NPC : MonoBehaviour
 {
     [SerializeField] private List<Consumable> consumablesAsked;
@@ -42,6 +47,7 @@ public class NPC : MonoBehaviour
         // TODO: activeBulle
     }
 
+    //A refaire
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("collide");
