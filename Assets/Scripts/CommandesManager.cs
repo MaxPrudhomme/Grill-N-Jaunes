@@ -45,9 +45,10 @@ public class CommandeManager: MonoBehaviour
             //On le fait avant pour pas qu'une commande qui vient de spawn l'augmente direct
             foreach (var spawnPoint in spawnPoints)
             {
-                //Si la commande est active
+                //Si la commande est active, on augmente la colère
                 if (spawnPoint.Item2)
                 {
+                    //Faire en sorte que la colère/sec augmente de façon log ? 
                     anger++;
                 }
             }
@@ -77,6 +78,9 @@ public class CommandeManager: MonoBehaviour
                         newSpawnPoint.x = newSpawnPoint2D.x;
                         newSpawnPoint.y = 2;
                         newSpawnPoint.z = newSpawnPoint2D.y;
+
+                        //TODO:
+                        //Génerer des ints aléatoires pour la sauce demandée.
 
 
                         commande.transform.position = newSpawnPoint;
