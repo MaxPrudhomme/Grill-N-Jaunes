@@ -7,7 +7,7 @@ public class CommandeManager: MonoBehaviour
     public GameObject commandePrefab;
     public float difficulty;
     public int maxCommandes;
-
+    public GameObject player;
     private GameObject commande;
     private int nbCommandes = 0;
     private float maxAnger;
@@ -43,7 +43,7 @@ public class CommandeManager: MonoBehaviour
             timer = 0;
             if (nbCommandes<maxCommandes)
             {
-                if (Random.Range(0, 20) >= difficulty)
+                if (Random.Range(0, 20) <= difficulty)
                 {
                     commande = Instantiate(commandePrefab);
                     spawnPointsIndex = Random.Range(0, spawnPoints.Count);
@@ -61,8 +61,8 @@ public class CommandeManager: MonoBehaviour
                         commande.GetComponent<NPC>().isCompleted += orderCompleted;
                         commande.GetComponent<NPC>().index = spawnPointsIndex;
 
-                        commande.transform.rotation = Quaternion.LookRotation(commande.transform.position - new Vector3(-10, commande.transform.position.y, 0));
-
+                        commande.transform.LookAt(new Vector3(player.transform.position.x,commande.transform.position.y,player.transform.position.z));
+                        commande.transform.Rotate(new Vector3(0, 90, 0));
                         Debug.Log("Spawn");
                         nbCommandes++;
                     }
