@@ -51,7 +51,7 @@ public class Consumable : MonoBehaviour
                         if (!hit.transform.parent.GetComponent<Consumable>().filled)
                         { 
                             Debug.Log(hit.gameObject.name + " is socket");
-                            hit.transform.GetChild(0).GetChild(2).gameObject.SetActive(true);
+                            hit.transform.parent.GetChild(0).GetChild(2).gameObject.SetActive(true);
                             hit.transform.parent.GetComponent<Consumable>().filled = true;
                             hit.transform.parent.GetComponent<Consumable>().objectName = "HotDog";
                             Debug.Log(hit.gameObject.name + " socketed");
