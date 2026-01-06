@@ -952,6 +952,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: bf65382e5e6d14e7f8140e4204ce07e2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4433956298737610453}
+    - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: bf65382e5e6d14e7f8140e4204ce07e2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 620162084640509748}
   m_SourcePrefab: {fileID: 100100000, guid: bf65382e5e6d14e7f8140e4204ce07e2, type: 3}
 --- !u!4 &5335692636472798814 stripped
 Transform:
@@ -1194,6 +1197,18 @@ MonoBehaviour:
   kSauce: {fileID: 1477231733755975556}
   mSauce: {fileID: 6153508587511773745}
   test: 0
+--- !u!114 &620162084640509748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8959746489164635213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69c02f0158ac6694bb9b82cac1258532, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GrabReleaseDetector
 --- !u!1001 &1920934685090775803
 PrefabInstance:
   m_ObjectHideFlags: 0
