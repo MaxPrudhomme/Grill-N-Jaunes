@@ -17,6 +17,11 @@ public class CommandeManager: MonoBehaviour
     private List<(Vector2, bool)> spawnPoints = new List<(Vector2, bool)>();
     private List<Vector2> availableSpawnPoints = new List<Vector2>();
     private int spawnPointsIndex;
+    private float beerAngerAmount;
+    private float diffScaling;
+    private int maxOrderCountDown = 0;
+    private int nbCommandesScaling;
+
     private const float TIME_INTERVAL = 2f;
 
     private float timer = 0f;
@@ -26,6 +31,9 @@ public class CommandeManager: MonoBehaviour
     void Start()
     {
         maxAnger = commandeManagerSO.maxHungerThreshold;
+        beerAngerAmount = commandeManagerSO.beerAngerAmount;
+        diffScaling = commandeManagerSO.difficultyScaling;
+        nbCommandesScaling = commandeManagerSO.nbCommandesScaling;
         foreach(Vector2 point in commandeManagerSO.spawnPoints)
         {
             spawnPoints.Add((point, false));
@@ -48,8 +56,12 @@ public class CommandeManager: MonoBehaviour
                 //Si la commande est active, on augmente la colère
                 if (spawnPoint.Item2)
                 {
-                    //Faire en sorte que la colère/sec augmente de façon log ? 
                     anger++;
+                    if (anger >= maxAnger)
+                    {
+                        Debug.Log("GameOver");
+                        gameOver();
+                    }
                 }
             }
 
@@ -91,17 +103,27 @@ public class CommandeManager: MonoBehaviour
                         //Rotation de la commande vers le joueur
                         commande.transform.LookAt(new Vector3(player.transform.position.x,commande.transform.position.y,player.transform.position.z));
                         commande.transform.Rotate(new Vector3(0, 90, 0));
-                        Debug.Log("Spawn");
+                        //Debug.Log("Spawn");
                         nbCommandes++;
                     }
                     else{
-                        Debug.Log("Cant spawn");
+                        //Debug.Log("Cant spawn");
                     }
                     
                 }
             }
 
-            Debug.Log(anger);
+            //Augmentation de la difficulté
+            difficulty += diffScaling;
+            Debug.Log("Diff : " + difficulty);
+            //Toutes les minutes, on augmente le nb max de commandes
+            maxOrderCountDown++;
+            if(maxOrderCountDown >= 30)
+            {
+                maxOrderCountDown = 0;
+                nbCommandes += nbCommandesScaling;
+                Debug.Log("Commandes max : " + nbCommandes);
+            }
         }
 
 
@@ -117,11 +139,20 @@ public class CommandeManager: MonoBehaviour
         }
     }
 
-    private void orderCompleted(int index)
+    private void orderCompleted(int index,bool wasBeer)
     {
         //Modification de l'emplacement
         spawnPoints[index] = (spawnPoints[index].Item1, false);
         nbCommandes--;
+        if (wasBeer)
+        {
+            anger += beerAngerAmount;
+        }
+    }
+
+    private void gameOver()
+    {
+        Debug.Log("GameOver");
     }
 
     public void OnDrawGizmos()

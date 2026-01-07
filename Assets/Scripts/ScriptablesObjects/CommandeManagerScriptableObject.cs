@@ -6,5 +6,7 @@ public class CommandeManagerScriptableObject : ScriptableObject
     public float maxHungerThreshold; 
     public float difficultyScaling;
     public Vector2[] spawnPoints;
+    public float beerAngerAmount;
+    public int nbCommandesScaling;
 
 }

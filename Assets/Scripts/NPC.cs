@@ -22,7 +22,8 @@ public class NPC : MonoBehaviour
     private float timer = 0;
     public int index;
 
-    public event Action<int> isCompleted;
+    public event Action<int,bool> isCompleted;
+
   
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -40,7 +41,7 @@ public class NPC : MonoBehaviour
 
     void AskFood()
     {
-        Debug.Log("NPC ask food");
+        //Debug.Log("NPC ask food");
         commandText.gameObject.SetActive(true);
         command = new();
         command.Add(consumablesAsked[0].getObjectName());
@@ -57,9 +58,15 @@ public class NPC : MonoBehaviour
     //          Augmenter la colère de ~10
     //          Compléter commande
     //      Check les ingédients
+    //      Si correspond : 
+    //          
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("collide");
+        if(other.transform.parent.GetComponent<Beer>() != null)
+        {
+
+        }
         if (other.transform.parent.TryGetComponent<Consumable>(out Consumable c))
         {
             if (command.Contains(c.getObjectName()))
@@ -68,7 +75,7 @@ public class NPC : MonoBehaviour
                 if (command.Count == 0)
                 {
                     commandText.gameObject.SetActive(false);
-                    isCompleted.Invoke(index);
+                    isCompleted.Invoke(index,false);
                     Debug.Log("command finished");
                 }
                 Destroy(other.gameObject);
