@@ -1951,7 +1951,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69c02f0158ac6694bb9b82cac1258532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GrabReleaseDetector
-  threshold: 2
+  playableArea: {fileID: 0}
+  threshold: 20
 --- !u!1001 &2556547730896128208
 PrefabInstance:
   m_ObjectHideFlags: 0
