@@ -5,7 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class GrabReleaseDetector : MonoBehaviour
 {
-    [SerializeField] private float threshold = 2;
+    //[SerializeField] private float threshold = 2;
     private XRGrabInteractable grabInteractable;
 
     void Awake()
@@ -29,14 +29,29 @@ public class GrabReleaseDetector : MonoBehaviour
         {
             Vector3 velocity = rb.linearVelocity;
 
-            Debug.Log("dot product: " + Vector3.Dot(velocity.normalized, Vector3.up));
-            if (Vector3.Dot(velocity.normalized, Vector3.up) > 0 && velocity.magnitude < threshold)
+            //Debug.Log("dot product: " + Vector3.Dot(velocity.normalized, Vector3.up));
+            //if (Vector3.Dot(velocity.normalized, Vector3.up) > 0 && velocity.magnitude < threshold)
+            //{
+            //    Debug.Log("application de l'aide à la vélocité");
+            //    Debug.Log("--- old velocity: " + velocity);
+            //    rb.linearVelocity = velocity * (threshold / velocity.magnitude);
+            //    Debug.Log("--- new velocity: " + velocity);
+            //}
+
+            if (transform.parent.TryGetComponent<PickupMovement>(out var pickupMovement))
             {
-                Debug.Log("application de l'aide à la vélocité");
-                Debug.Log("--- old velocity: " + velocity);
-                rb.linearVelocity = velocity * (threshold / velocity.magnitude);
-                Debug.Log("--- new velocity: " + velocity);
+                Debug.Log("test");
+                Debug.Log("velocity before: " + rb.linearVelocity);
+                rb.linearVelocity -= pickupMovement.velocity;
+                Debug.Log("velocity after: " + rb.linearVelocity);
             }
+            //if (transform.parent.TryGetComponent<Rigidbody>(out var rigidbody))
+            //{
+            //    Debug.Log("test");
+            //    Debug.Log("velocity before: " + rb.linearVelocity);
+            //    rb.linearVelocity -= rigidbody.linearVelocity;
+            //    Debug.Log("velocity after: " + rb.linearVelocity);
+            //}
         }
     }
 }

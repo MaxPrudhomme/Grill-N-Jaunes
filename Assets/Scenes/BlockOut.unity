@@ -1427,7 +1427,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1011217234794917045, guid: 7be7449ff2fb75f4d9654de8d0f7511c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.813
+      value: 0.8129997
       objectReference: {fileID: 0}
     - target: {fileID: 1011217234794917045, guid: 7be7449ff2fb75f4d9654de8d0f7511c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1435,7 +1435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1011217234794917045, guid: 7be7449ff2fb75f4d9654de8d0f7511c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.234
+      value: 0.23400003
       objectReference: {fileID: 0}
     - target: {fileID: 1011217234794917045, guid: 7be7449ff2fb75f4d9654de8d0f7511c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1485,7 +1485,8 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6276159049150525339, guid: 7be7449ff2fb75f4d9654de8d0f7511c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11556,6 +11557,7 @@ GameObject:
   - component: {fileID: 1663755857}
   - component: {fileID: 1663755858}
   - component: {fileID: 1663755859}
+  - component: {fileID: 1663755860}
   m_Layer: 0
   m_Name: PlayableArea
   m_TagString: Untagged
@@ -11605,6 +11607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickupMovement
   speed: 1
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!65 &1663755859
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11626,6 +11629,33 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 2.0980182, z: 5.2413373}
   m_Center: {x: 0, y: -1.4937475, z: 2.4376028}
+--- !u!54 &1663755860
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663755856}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!4 &1669223022 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3889458395341349289, guid: 32573756301eae645a8383ab9243fb3a, type: 3}
@@ -14760,7 +14790,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2121087227
 Transform:
   m_ObjectHideFlags: 0

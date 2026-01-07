@@ -197,11 +197,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4086965472890682685}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69c02f0158ac6694bb9b82cac1258532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GrabReleaseDetector
+  playableArea: {fileID: 0}
   threshold: 2
 --- !u!1 &8058919209898196035
 GameObject:
