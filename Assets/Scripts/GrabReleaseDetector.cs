@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
@@ -28,9 +29,13 @@ public class GrabReleaseDetector : MonoBehaviour
         {
             Vector3 velocity = rb.linearVelocity;
 
-            if (Vector3.Dot(velocity, Vector3.up) > 0 && velocity.magnitude < threshold)
+            Debug.Log("dot product: " + Vector3.Dot(velocity.normalized, Vector3.up));
+            if (Vector3.Dot(velocity.normalized, Vector3.up) > 0 && velocity.magnitude < threshold)
             {
+                Debug.Log("application de l'aide à la vélocité");
+                Debug.Log("--- old velocity: " + velocity);
                 rb.linearVelocity = velocity * (threshold / velocity.magnitude);
+                Debug.Log("--- new velocity: " + velocity);
             }
         }
     }
