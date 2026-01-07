@@ -82,27 +82,57 @@ public class Commande : MonoBehaviour
             //On check le type d'aliment
             if (demande.Item1.ToString() == c.objectName)
             {
-                switch (demande.Item2) {
-                    case SauceAliment.Nature:
-                        if(!c.m && !c.k)
+                if (demande.Item1 == Aliment.Saucisse)
+                {
+                    if ((other.transform.parent.TryGetComponent<Cookable>(out Cookable cookable)))
+                    {
+                        if(cookable.cuisson == Cuisson.Cuite)
                         {
-                            isCompleted.Invoke(index, false);
+                            Debug.Log(cookable.cuisson);
+                            completeCommande(index, false);
+                            Destroy(cookable.gameObject);
+
                         }
-                        break;
-                    case SauceAliment.Moutarde:
-                        if (c.m )
-                        {
-                            isCompleted.Invoke(index, false);
-                        }
-                        break;
-                    case SauceAliment.Ketchup:
-                        if (c.k)
-                        {
-                            isCompleted.Invoke(index, false);
-                        }
-                        break;
+                    }
                 }
+                else
+                {
+                    switch (demande.Item2)
+                    {
+                        case SauceAliment.Nature:
+                            if (!c.m && !c.k)
+                            {
+
+                                completeCommande(index, false);
+                                Destroy(c.gameObject);
+                            }
+                            break;
+                        case SauceAliment.Moutarde:
+                            if (c.m)
+                            {
+                                completeCommande(index, false);
+                                Destroy(c.gameObject);
+
+                            }
+                            break;
+                        case SauceAliment.Ketchup:
+                            if (c.k)
+                            {
+                                completeCommande(index, false);
+                                Destroy(c.gameObject);
+
+                            }
+                            break;
+                    }
+                }
+                    
             }
         }
+    }
+
+    private void completeCommande(int index, bool isBeer) 
+    { 
+        isCompleted.Invoke(index, isBeer);
+        Destroy(gameObject);
     }
 }

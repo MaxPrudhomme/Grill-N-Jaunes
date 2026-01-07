@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
+
+
 public class Consumable : MonoBehaviour
 {
     [SerializeField] public string objectName;
