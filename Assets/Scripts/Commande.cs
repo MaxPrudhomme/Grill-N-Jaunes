@@ -12,10 +12,11 @@ public enum SauceAliment
     Ketchup,
     Rien
 }
-public class NPC : MonoBehaviour
+public class Commande : MonoBehaviour
 {
     [SerializeField] private List<Consumable> consumablesAsked;
     [SerializeField] private TextMeshPro commandText;
+    
 
     public CommandeManager manager;
     private List<string> command;

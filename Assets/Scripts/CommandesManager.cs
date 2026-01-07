@@ -97,8 +97,8 @@ public class CommandeManager: MonoBehaviour
 
                         commande.transform.position = newSpawnPoint;
                         //On lie l'Action de la commande
-                        commande.GetComponent<NPC>().isCompleted += orderCompleted;
-                        commande.GetComponent<NPC>().index = spawnPointsIndex;
+                        commande.GetComponent<Commande>().isCompleted += orderCompleted;
+                        commande.GetComponent<Commande>().index = spawnPointsIndex;
 
                         //Rotation de la commande vers le joueur
                         commande.transform.LookAt(new Vector3(player.transform.position.x,commande.transform.position.y,player.transform.position.z));
