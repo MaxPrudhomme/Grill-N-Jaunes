@@ -1,14 +1,16 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
+
+
 public class Consumable : MonoBehaviour
 {
-    [SerializeField] private string objectName;
+    [SerializeField] public string objectName;
     [SerializeField] private GameObject kSauce;
     [SerializeField] private GameObject mSauce;
     private bool filled = false;
-    private bool k = false;
-    private bool m = false;
+    public bool k = false;
+    public bool m = false;
 
     public bool test = false;
     public string getObjectName()

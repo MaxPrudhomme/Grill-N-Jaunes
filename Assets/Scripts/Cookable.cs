@@ -1,6 +1,11 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
-
+public enum Cuisson
+{
+    Crue,
+    Cuite,
+    Brulee,
+}
 public class Cookable : MonoBehaviour
 {
     [SerializeField] private SkinnedMeshRenderer[] meshRenderer;
@@ -9,6 +14,7 @@ public class Cookable : MonoBehaviour
 
     public bool check = false;
     public float cookPoint = 0;
+    public Cuisson cuisson = Cuisson.Crue;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,11 +30,14 @@ public class Cookable : MonoBehaviour
         {
             foreach (SkinnedMeshRenderer renderer in meshRenderer)
                 renderer.material = cookedMaterials[2];
+            cuisson = Cuisson.Brulee;
         }
         else if (cookPoint >= 5)
         {
+            cuisson = Cuisson.Cuite;
             foreach (SkinnedMeshRenderer renderer in meshRenderer)
                 renderer.material = cookedMaterials[1];
+           
         }
         /*
         if (Input.GetKeyDown(KeyCode.Space) && check)

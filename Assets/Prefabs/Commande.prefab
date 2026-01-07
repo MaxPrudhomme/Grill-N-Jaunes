@@ -284,7 +284,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -339,11 +339,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f77ad65bef13704f8afe7227f01aaed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPC
-  consumablesAsked:
-  - {fileID: 4433956298737610453, guid: 116a3057872c30b4583bdb6f6d0dbebe, type: 3}
   commandText: {fileID: 1228711420129823094}
   manager: {fileID: 0}
   index: 0
+  meshRenderer: {fileID: 5858335895858134913}
 --- !u!135 &8466205940264284206
 SphereCollider:
   m_ObjectHideFlags: 0

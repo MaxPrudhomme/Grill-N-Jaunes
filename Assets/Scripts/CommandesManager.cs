@@ -91,8 +91,7 @@ public class CommandeManager: MonoBehaviour
                         newSpawnPoint.y = 2;
                         newSpawnPoint.z = newSpawnPoint2D.y;
 
-                        //TODO:
-                        //Génerer des ints aléatoires pour la sauce demandée.
+                       
 
 
                         commande.transform.position = newSpawnPoint;
@@ -121,8 +120,7 @@ public class CommandeManager: MonoBehaviour
             if(maxOrderCountDown >= 30)
             {
                 maxOrderCountDown = 0;
-                nbCommandes += nbCommandesScaling;
-                Debug.Log("Commandes max : " + nbCommandes);
+                maxCommandes += nbCommandesScaling;
             }
         }
 

@@ -1193,9 +1193,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef4db54c79b16524cbeddb123f4a5d12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Consumable
-  objectName: Sausage
+  objectName: Saucisse
   kSauce: {fileID: 1477231733755975556}
   mSauce: {fileID: 6153508587511773745}
+  k: 0
+  m: 0
   test: 0
 --- !u!114 &620162084640509748
 MonoBehaviour:
@@ -1209,6 +1211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69c02f0158ac6694bb9b82cac1258532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GrabReleaseDetector
+  threshold: 5
 --- !u!1001 &1920934685090775803
 PrefabInstance:
   m_ObjectHideFlags: 0

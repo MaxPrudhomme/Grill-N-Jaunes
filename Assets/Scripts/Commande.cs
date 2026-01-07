@@ -6,23 +6,27 @@ using System.Threading;
 using TMPro;
 using UnityEngine;
 
+public enum Aliment
+{
+    Saucisse,
+    HotDog
+}
 public enum SauceAliment
 {
     Moutarde,
     Ketchup,
-    Rien
+    Nature
 }
 public class Commande : MonoBehaviour
 {
-    [SerializeField] private List<Consumable> consumablesAsked;
     [SerializeField] private TextMeshPro commandText;
     
 
     public CommandeManager manager;
-    private List<string> command;
+    private (Aliment, SauceAliment) demande;
     private float timer = 0;
     public int index;
-
+    public MeshRenderer meshRenderer;
     public event Action<int,bool> isCompleted;
 
   
@@ -30,7 +34,6 @@ public class Commande : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        commandText.gameObject.SetActive(false);
         AskFood();
     }
 
@@ -42,11 +45,17 @@ public class Commande : MonoBehaviour
 
     void AskFood()
     {
-        //Debug.Log("NPC ask food");
-        commandText.gameObject.SetActive(true);
-        command = new();
-        command.Add(consumablesAsked[0].getObjectName());
+        int aliment = UnityEngine.Random.Range(0, 2);
+
+        demande.Item1 = (Aliment)aliment;
+        //Si l'aliment demandé est une saucisse, aucune sauce n'est demandée
+        demande.Item2 = aliment == 0 ? SauceAliment.Nature : (SauceAliment)UnityEngine.Random.Range(0, 3);
+
+
         // TODO: activeBulle
+        string commandeString = demande.Item1 + " " + demande.Item2 + " !";
+        commandText.text = commandeString;
+
     }
 
     
@@ -66,21 +75,64 @@ public class Commande : MonoBehaviour
         Debug.Log("collide");
         if(other.transform.parent.GetComponent<Beer>() != null)
         {
-
+            isCompleted.Invoke(index, true);
         }
         if (other.transform.parent.TryGetComponent<Consumable>(out Consumable c))
         {
-            if (command.Contains(c.getObjectName()))
+            //On check le type d'aliment
+            if (demande.Item1.ToString() == c.objectName)
             {
-                command.Remove(c.getObjectName());
-                if (command.Count == 0)
+                if (demande.Item1 == Aliment.Saucisse)
                 {
-                    commandText.gameObject.SetActive(false);
-                    isCompleted.Invoke(index,false);
-                    Debug.Log("command finished");
+                    if ((other.transform.parent.TryGetComponent<Cookable>(out Cookable cookable)))
+                    {
+                        if(cookable.cuisson == Cuisson.Cuite)
+                        {
+                            Debug.Log(cookable.cuisson);
+                            completeCommande(index, false);
+                            Destroy(cookable.gameObject);
+
+                        }
+                    }
                 }
-                Destroy(other.gameObject);
+                else
+                {
+                    switch (demande.Item2)
+                    {
+                        case SauceAliment.Nature:
+                            if (!c.m && !c.k)
+                            {
+
+                                completeCommande(index, false);
+                                Destroy(c.gameObject);
+                            }
+                            break;
+                        case SauceAliment.Moutarde:
+                            if (c.m)
+                            {
+                                completeCommande(index, false);
+                                Destroy(c.gameObject);
+
+                            }
+                            break;
+                        case SauceAliment.Ketchup:
+                            if (c.k)
+                            {
+                                completeCommande(index, false);
+                                Destroy(c.gameObject);
+
+                            }
+                            break;
+                    }
+                }
+                    
             }
         }
+    }
+
+    private void completeCommande(int index, bool isBeer) 
+    { 
+        isCompleted.Invoke(index, isBeer);
+        Destroy(gameObject);
     }
 }
