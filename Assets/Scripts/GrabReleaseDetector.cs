@@ -4,6 +4,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class GrabReleaseDetector : MonoBehaviour
 {
+    [SerializeField] private float threshold = 2;
     private XRGrabInteractable grabInteractable;
 
     void Awake()
@@ -26,9 +27,11 @@ public class GrabReleaseDetector : MonoBehaviour
         if (TryGetComponent<Rigidbody>(out var rb))
         {
             Vector3 velocity = rb.linearVelocity;
-            Vector3 angularVelocity = rb.angularVelocity;
 
-            Debug.Log($"Vitesse lin�aire : {velocity}, Vitesse angulaire : {angularVelocity}");
+            if (Vector3.Dot(velocity, Vector3.up) > 0 && velocity.magnitude < threshold)
+            {
+                rb.linearVelocity = velocity * (threshold / velocity.magnitude);
+            }
         }
     }
 }
