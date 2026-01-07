@@ -29,9 +29,9 @@ public class GrabReleaseDetector : MonoBehaviour
         {
             Vector3 velocity = rb.linearVelocity;
 
-            if (velocity.magnitude < threshold)
+            if (Vector3.Dot(velocity, Vector3.up) > 0 && velocity.magnitude < threshold)
             {
-                rb.linearVelocity = velocity * coefSpeed;
+                rb.linearVelocity = velocity * (threshold / velocity.magnitude);
             }
         }
     }
