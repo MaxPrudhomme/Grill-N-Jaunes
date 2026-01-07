@@ -115,14 +115,12 @@ public class CommandeManager: MonoBehaviour
 
             //Augmentation de la difficulté
             difficulty += diffScaling;
-            Debug.Log("Diff : " + difficulty);
             //Toutes les minutes, on augmente le nb max de commandes
             maxOrderCountDown++;
             if(maxOrderCountDown >= 30)
             {
                 maxOrderCountDown = 0;
                 nbCommandes += nbCommandesScaling;
-                Debug.Log("Commandes max : " + nbCommandes);
             }
         }
 
