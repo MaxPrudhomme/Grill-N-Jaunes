@@ -5,7 +5,6 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 public class GrabReleaseDetector : MonoBehaviour
 {
     [SerializeField] private float threshold = 2;
-    [SerializeField] private float coefSpeed = 5;
     private XRGrabInteractable grabInteractable;
 
     void Awake()
