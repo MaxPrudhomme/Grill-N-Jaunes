@@ -1,0 +1,14 @@
+:root {
+}
+
+.buttonstyle {
+    -unity-font-definition: url("project://database/Assets/Fonts/RubikBurned-Regular.ttf?fileID=12800000&guid=a595f0c6f70c13141a1ca6026ece0752&type=3#RubikBurned-Regular");
+    color: rgb(0, 0, 0);
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    background-color: rgb(101, 101, 101);
+}
+
+.buttonstyle:hover {
+    background-color: rgb(101, 101, 101);
+    scale: 1.04 1.04 1.04;
+}
