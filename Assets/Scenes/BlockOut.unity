@@ -15276,7 +15276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AngerManager
   commandeManagerSO: {fileID: 11400000, guid: e2b228b1b1421d644a3c2d66670fe62d, type: 2}
   commandePrefab: {fileID: 8243091225158538817, guid: f90ee6998031932459ce9bde0d0b7343, type: 3}
-  difficulty: 20
+  difficulty: 3
   maxCommandes: 1
   player: {fileID: 441087508}
 --- !u!4 &1140099472
