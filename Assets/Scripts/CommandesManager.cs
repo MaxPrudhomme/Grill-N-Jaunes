@@ -8,6 +8,7 @@ public class CommandeManager: MonoBehaviour
     public float difficulty;
     public int maxCommandes;
     public GameObject player;
+    public Transform commandeParent;
     private GameObject commande;
     private int nbCommandes = 0;
     private float maxAnger;
@@ -21,6 +22,7 @@ public class CommandeManager: MonoBehaviour
     private float diffScaling;
     private int maxOrderCountDown = 0;
     private int nbCommandesScaling;
+    private PickupMovement pickupMovementScript;
 
     private const float TIME_INTERVAL = 2f;
 
@@ -39,6 +41,8 @@ public class CommandeManager: MonoBehaviour
             spawnPoints.Add((point, false));
         }
         anger = 0f;
+
+        commandeParent.TryGetComponent(out pickupMovementScript);
     }
 
     // Update is called once per frame
@@ -58,6 +62,7 @@ public class CommandeManager: MonoBehaviour
                 {
                     anger+=1;
                     Debug.Log(anger);
+                    pickupMovementScript.SetSpeed(Mathf.Abs(anger - maxAnger) / (2 * maxAnger));
                     if (anger >= maxAnger)
                     {
                         Debug.Log("GameOver");
@@ -94,6 +99,7 @@ public class CommandeManager: MonoBehaviour
 
 
                         commande.transform.position = newSpawnPoint;
+                        commande.transform.SetParent(commandeParent);
                         //On lie l'Action de la commande
                         commande.GetComponent<Commande>().isCompleted += orderCompleted;
                         commande.GetComponent<Commande>().index = spawnPointsIndex;
@@ -140,7 +146,7 @@ public class CommandeManager: MonoBehaviour
         }
     }
 
-    private void orderCompleted(int index,bool wasBeer)
+    private void orderCompleted(int index, bool wasBeer)
     {
         //Modification de l'emplacement
         spawnPoints[index] = (spawnPoints[index].Item1, false);
@@ -155,6 +161,8 @@ public class CommandeManager: MonoBehaviour
     {
         Debug.Log("GameOver");
         Destroy(gameObject);
+
+        pickupMovementScript.SetSpeed(0);
     }
 
     public void OnDrawGizmos()

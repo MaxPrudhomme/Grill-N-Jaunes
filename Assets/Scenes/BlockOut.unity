@@ -518,13 +518,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 35433098}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.36149728, y: -0.6077174, z: 0.60771555, w: 0.36149848}
-  m_LocalPosition: {x: -223.1, y: 0, z: 142.7}
+  m_LocalRotation: {x: 0.33537698, y: -0.6225134, z: 0.6225116, w: 0.33537826}
+  m_LocalPosition: {x: -31, y: -0, z: 101}
   m_LocalScale: {x: 1000, y: 750, z: 1000}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 118.508}
+  m_LocalEulerAnglesHint: {x: 89.98, y: 0, z: 123.373}
 --- !u!1001 &45603172
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22336,7 +22336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickupMovement
   spline: {fileID: 1681908172}
-  speed: 1
+  baseSpeed: 0.5
   velocity: {x: 0, y: 0, z: 0}
 --- !u!4 &996119541
 Transform:
@@ -25312,7 +25312,8 @@ MonoBehaviour:
   commandePrefab: {fileID: 8243091225158538817, guid: f90ee6998031932459ce9bde0d0b7343, type: 3}
   difficulty: 3
   maxCommandes: 1
-  player: {fileID: 0}
+  player: {fileID: 2025781297}
+  commandeParent: {fileID: 996119541}
 --- !u!4 &1140099472
 Transform:
   m_ObjectHideFlags: 0
@@ -44860,6 +44861,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b3784dfee2b70854695a7aea8f9984c5, type: 3}
   m_PrefabInstance: {fileID: 2022476871}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2025781297 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1717954561962503725, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+  m_PrefabInstance: {fileID: 566306171}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &2032665165 stripped
 Transform:
