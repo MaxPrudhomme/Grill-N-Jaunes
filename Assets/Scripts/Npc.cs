@@ -17,6 +17,11 @@ public class Npc : MonoBehaviour
         anim = GetComponent<Animator>();
         if (!signe)
             Barks();
+        else
+        {
+            if (Random.Range(0, 3) == 0)
+                anim.Play("Walking");
+        }
 
         anim.speed = Random.Range(0.9f, 1.1f);
 
@@ -34,7 +39,7 @@ public class Npc : MonoBehaviour
     private void Barks()
     {
         StopAllCoroutines();
-        StartCoroutine(IBarks(Random.Range(2f, 10f)));
+        StartCoroutine(IBarks(Random.Range(5f, 15f)));
     }
 
     private System.Collections.IEnumerator IBarks(float t)
