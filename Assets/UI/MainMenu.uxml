@@ -1,0 +1,6 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; justify-content: center; align-self: center; align-items: center; width: 337px;">
+        <ui:Button text="Jouer" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/RubikMarkerHatch-Regular.ttf?fileID=12800000&amp;guid=1ee45efcd9530a44095573b674aadb02&amp;type=3#RubikMarkerHatch-Regular&quot;); -unity-font-style: bold; color: rgb(166, 255, 0); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; background-color: rgba(188, 188, 188, 0); width: 161px;" />
+        <ui:Button text="Quitter" style="-unity-font-style: bold; -unity-font-definition: url(&quot;project://database/Assets/Fonts/RubikMarkerHatch-Regular.ttf?fileID=12800000&amp;guid=1ee45efcd9530a44095573b674aadb02&amp;type=3#RubikMarkerHatch-Regular&quot;); color: rgb(255, 0, 0); background-color: rgba(188, 188, 188, 0); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; width: 139px;" />
+    </ui:VisualElement>
+</ui:UXML>
