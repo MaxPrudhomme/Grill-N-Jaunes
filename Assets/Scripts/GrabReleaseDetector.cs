@@ -15,6 +15,7 @@ public class GrabReleaseDetector : MonoBehaviour
 
     void OnEnable()
     {
+        grabInteractable.selectEntered.AddListener(OnGrab);
         grabInteractable.selectExited.AddListener(OnReleased);
     }
 
@@ -38,11 +39,12 @@ public class GrabReleaseDetector : MonoBehaviour
             //    Debug.Log("--- new velocity: " + velocity);
             //}
 
-            if (transform.parent.TryGetComponent<PickupMovement>(out var pickupMovement))
+            if (transform.parent != null && transform.parent.TryGetComponent<PickupMovement>(out var pickupMovement))
             {
                 Debug.Log("test");
                 Debug.Log("velocity before: " + rb.linearVelocity);
-                rb.linearVelocity -= pickupMovement.velocity;
+                //rb.linearVelocity -= pickupMovement.velocity;
+                transform.SetParent(pickupMovement.transform);
                 Debug.Log("velocity after: " + rb.linearVelocity);
             }
             //if (transform.parent.TryGetComponent<Rigidbody>(out var rigidbody))
@@ -52,6 +54,17 @@ public class GrabReleaseDetector : MonoBehaviour
             //    rb.linearVelocity -= rigidbody.linearVelocity;
             //    Debug.Log("velocity after: " + rb.linearVelocity);
             //}
+        }
+    }
+
+    private void OnGrab(SelectEnterEventArgs args)
+    {
+        if (TryGetComponent<Rigidbody>(out var rb))
+        {
+            if (transform.parent != null && transform.parent.TryGetComponent<PickupMovement>(out var pickupMovement))
+            {
+                transform.SetParent(null);
+            }
         }
     }
 }
