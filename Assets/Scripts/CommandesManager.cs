@@ -86,9 +86,9 @@ public class CommandeManager: MonoBehaviour
                         spawnPoints[spawnPointsIndex] = (spawnPoints[spawnPointsIndex].Item1, true);
 
                         newSpawnPoint2D = spawnPoints[spawnPointsIndex].Item1;
-                        newSpawnPoint.x = newSpawnPoint2D.x;
+                        newSpawnPoint.x = newSpawnPoint2D.x + player.transform.position.x;
                         newSpawnPoint.y = 2;
-                        newSpawnPoint.z = newSpawnPoint2D.y;
+                        newSpawnPoint.z = newSpawnPoint2D.y + player.transform.position.z; ;
 
                        
 
@@ -161,7 +161,7 @@ public class CommandeManager: MonoBehaviour
     {
         foreach ((Vector2,bool) point in spawnPoints) 
         {
-            Gizmos.DrawIcon(new Vector3(point.Item1.x,2, point.Item1.y),"d");
+            Gizmos.DrawIcon(new Vector3(point.Item1.x + player.transform.position.x,2, point.Item1.y+ player.transform.position.z),"d");
         }
     }
 }
