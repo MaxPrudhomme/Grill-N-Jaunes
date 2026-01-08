@@ -56,7 +56,8 @@ public class CommandeManager: MonoBehaviour
                 //Si la commande est active, on augmente la colère
                 if (spawnPoint.Item2)
                 {
-                    anger++;
+                    anger+=1;
+                    Debug.Log(anger);
                     if (anger >= maxAnger)
                     {
                         Debug.Log("GameOver");
@@ -74,12 +75,10 @@ public class CommandeManager: MonoBehaviour
                 if (Random.Range(0, 20) <= difficulty)
                 {
                     commande = Instantiate(commandePrefab);
-                    //On génere un index aléatoire jusqu'a trouver un emplacement libre
-                    do
-                    {
-                        spawnPointsIndex = Random.Range(0, spawnPoints.Count);
+                    //On génere un index aléatoire. Si jamais il est déjà pris, pas de spawn
+                    
+                    spawnPointsIndex = Random.Range(0, spawnPoints.Count);
 
-                    } while (spawnPoints[spawnPointsIndex].Item2);
                     //Dernier check (peut être à dégager)
                     if (!spawnPoints[spawnPointsIndex].Item2)
                     {
@@ -102,8 +101,11 @@ public class CommandeManager: MonoBehaviour
                         //Rotation de la commande vers le joueur
                         commande.transform.LookAt(new Vector3(player.transform.position.x,commande.transform.position.y,player.transform.position.z));
                         commande.transform.Rotate(new Vector3(0, 90, 0));
+
+                        commande.GetComponent<Commande>().anger = anger;
                         //Debug.Log("Spawn");
                         nbCommandes++;
+                        Debug.Log(nbCommandes);
                     }
                     else{
                         //Debug.Log("Cant spawn");
@@ -131,6 +133,7 @@ public class CommandeManager: MonoBehaviour
     public void increaseAnger(float amount)
     {
         anger += amount;
+        Debug.Log(anger);
         if(anger >= maxAnger)
         {
             Debug.Log("GameOver");
@@ -151,6 +154,7 @@ public class CommandeManager: MonoBehaviour
     private void gameOver()
     {
         Debug.Log("GameOver");
+        Destroy(gameObject);
     }
 
     public void OnDrawGizmos()
