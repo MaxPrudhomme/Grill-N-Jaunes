@@ -4,6 +4,10 @@ public class Npc : MonoBehaviour
 {
     [SerializeField] private SkinnedMeshRenderer hair;
     [SerializeField] private Material[] hairMat;
+    [SerializeField] private SkinnedMeshRenderer pant;
+    [SerializeField] private Material[] pantMat;
+    [SerializeField] private SkinnedMeshRenderer top;
+    [SerializeField] private Material[] topMat;
     [SerializeField] private bool signe = false;
     private Animator anim;
 
@@ -15,6 +19,10 @@ public class Npc : MonoBehaviour
             Barks();
 
         anim.speed = Random.Range(0.9f, 1.1f);
+
+        hair.material = hairMat[Random.Range(0,hairMat.Length)];
+        pant.material = pantMat[Random.Range(0, pantMat.Length)];
+        top.materials[0] = topMat[Random.Range(0, topMat.Length)];
     }
 
     // Update is called once per frame
