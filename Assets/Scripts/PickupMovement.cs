@@ -33,9 +33,9 @@ public class PickupMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("----- test enter");
+        
         if (!other.transform.parent.TryGetComponent<Rigidbody>(out var _)) return;
-        Debug.Log("----- test enter 2");
+        
 
         Transform parent = other.transform.parent;
         if (parent)
@@ -50,9 +50,9 @@ public class PickupMovement : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("----- test enter");
+        
         if (!other.transform.parent.TryGetComponent<Rigidbody>(out var _)) return;
-        Debug.Log("----- test enter 2");
+        
 
         Transform parent = other.transform.parent;
         if (parent)
@@ -67,6 +67,13 @@ public class PickupMovement : MonoBehaviour
 
     private void Move()
     {
+        Debug.Log("Trajet: " + t + "/" + spline.CalculateLength());
+        if (t >= 1f)
+        {
+            Debug.Log("END SPLINE");
+            return;
+        }
+
         velocity = (transform.position - lastPosition) / Time.fixedDeltaTime;
         lastPosition = transform.position;
 
@@ -75,6 +82,8 @@ public class PickupMovement : MonoBehaviour
         t += Time.fixedDeltaTime * speed / 100;
         transform.position = pos;
         transform.LookAt(pos2);
+
+
     }
 
     public void SetSpeed(float speed)
