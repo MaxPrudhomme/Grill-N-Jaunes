@@ -151,9 +151,10 @@ public class CommandeManager: MonoBehaviour
         //Modification de l'emplacement
         spawnPoints[index] = (spawnPoints[index].Item1, false);
         nbCommandes--;
-        if (wasBeer)
+        //Si ce n'est pas une bière, la colère diminue
+        if (!wasBeer)
         {
-            anger += beerAngerAmount;
+            anger -= 5;
         }
     }
 
