@@ -6,6 +6,7 @@ public class PickupMovement : MonoBehaviour
 {
     public static PickupMovement instance = null;
     [SerializeField] private SplineContainer spline;
+    [SerializeField] private GameObject WinGameUI;
     public float baseSpeed;
 
     public Vector3 velocity;
@@ -71,6 +72,8 @@ public class PickupMovement : MonoBehaviour
         if (t >= 1f)
         {
             Debug.Log("END SPLINE");
+            WinGameUI.SetActive(true);
+            CommandeManager.instance.gameIsOver = true;
             return;
         }
 

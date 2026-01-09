@@ -57181,7 +57181,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickupMovement
   spline: {fileID: 1681908172}
-  baseSpeed: 2
+  WinGameUI: {fileID: 1143856211}
+  baseSpeed: 0.5
   velocity: {x: 0, y: 0, z: 0}
   speed: 0
 --- !u!4 &996119541
@@ -64911,7 +64912,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1143856212
 Transform:
   m_ObjectHideFlags: 0
