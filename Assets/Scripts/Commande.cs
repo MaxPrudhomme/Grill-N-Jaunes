@@ -82,7 +82,7 @@ public class Commande : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("collide");
-        if(other.transform.parent.GetComponent<Beer>() != null)
+        if(other.transform.parent.GetComponent<Beer>())
         {
             Debug.Log("Biere");
             completeCommande(index, true);
