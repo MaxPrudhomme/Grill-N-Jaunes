@@ -52,7 +52,7 @@ public class Cookable : MonoBehaviour
     public void IsCooked(float value)
     {
         //print(cookPoint);
-        cookPoint += value;
+        cookPoint += value*0.5f;
     }
 
     public void CookSound(bool x)
