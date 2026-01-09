@@ -84,7 +84,8 @@ public class Commande : MonoBehaviour
         Debug.Log("collide");
         if(other.transform.parent.GetComponent<Beer>() != null)
         {
-            isCompleted.Invoke(index, true);
+            Debug.Log("Biere");
+            completeCommande(index, true);
         }
         if (other.transform.parent.TryGetComponent<Consumable>(out Consumable c))
         {
