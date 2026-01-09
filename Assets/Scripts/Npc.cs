@@ -1,3 +1,4 @@
+using System.Drawing;
 using UnityEngine;
 
 public class Npc : MonoBehaviour
@@ -9,18 +10,32 @@ public class Npc : MonoBehaviour
     [SerializeField] private SkinnedMeshRenderer top;
     [SerializeField] private Material[] topMat;
     [SerializeField] private bool signe = false;
+    [SerializeField] private bool walking = true;
     private Animator anim;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         anim = GetComponent<Animator>();
-        if (!signe)
+        if (!signe && walking)
             Barks();
         else
         {
             if (Random.Range(0, 3) == 0)
                 anim.Play("Walking");
+        }
+
+        if(!walking)
+        {
+            
+            if(signe)
+                anim.Play("Standing Torch Idle 01");
+            else
+            {
+                anim.Play("Breathing Idle");
+                Barks();
+            }
+
         }
 
         anim.speed = Random.Range(0.9f, 1.1f);
