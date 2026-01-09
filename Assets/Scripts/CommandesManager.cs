@@ -154,7 +154,9 @@ public class CommandeManager: MonoBehaviour
         //Si ce n'est pas une bière, la colère diminue
         if (!wasBeer)
         {
+
             anger -= 5;
+            if (anger < 0) anger = 0;
         }
     }
 
