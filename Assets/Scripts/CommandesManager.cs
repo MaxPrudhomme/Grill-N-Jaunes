@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 public class CommandeManager: MonoBehaviour
 {
@@ -77,12 +78,12 @@ public class CommandeManager: MonoBehaviour
             if (nbCommandes<maxCommandes)
             {
                 //Check si on fait bien spawn une commande
-                if (Random.Range(0, 20) <= difficulty)
+                if (UnityEngine.Random.Range(0, 20) <= difficulty)
                 {
                     commande = Instantiate(commandePrefab);
                     //On génere un index aléatoire. Si jamais il est déjà pris, pas de spawn
                     
-                    spawnPointsIndex = Random.Range(0, spawnPoints.Count);
+                    spawnPointsIndex = UnityEngine.Random.Range(0, spawnPoints.Count);
 
                     //Dernier check (peut être à dégager)
                     if (!spawnPoints[spawnPointsIndex].Item2)
@@ -108,10 +109,13 @@ public class CommandeManager: MonoBehaviour
                         commande.transform.LookAt(new Vector3(player.transform.position.x,commande.transform.position.y,player.transform.position.z));
                         commande.transform.Rotate(new Vector3(0, 90, 0));
 
+                        
+
                         commande.GetComponent<Commande>().anger = anger;
                         //Debug.Log("Spawn");
                         nbCommandes++;
                         Debug.Log(nbCommandes);
+
                     }
                     else{
                         //Debug.Log("Cant spawn");
@@ -136,15 +140,7 @@ public class CommandeManager: MonoBehaviour
 
     }
 
-    public void increaseAnger(float amount)
-    {
-        anger += amount;
-        Debug.Log(anger);
-        if(anger >= maxAnger)
-        {
-            Debug.Log("GameOver");
-        }
-    }
+   
 
     private void orderCompleted(int index, bool wasBeer)
     {
@@ -161,6 +157,7 @@ public class CommandeManager: MonoBehaviour
         {
             anger += 5;
         }
+
     }
 
     private void gameOver()

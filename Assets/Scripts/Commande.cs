@@ -30,7 +30,6 @@ public class Commande : MonoBehaviour
     public event Action<int,bool> isCompleted;
     public float anger;
     public List<Material> areaMaterials = new List<Material>();
-
   
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -38,13 +37,14 @@ public class Commande : MonoBehaviour
     {
         //meshRenderer.material.color = color;
         AskFood();
-        meshRenderer.material = areaMaterials[(int)Math.Round(anger/25)];
+        meshRenderer.material = areaMaterials[(int)Math.Round(anger / 25)];
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+    
     }
 
     void AskFood()
@@ -62,7 +62,12 @@ public class Commande : MonoBehaviour
 
     }
 
-    
+
+    private void updateColor(float anger)
+    {
+        meshRenderer.material = areaMaterials[(int)Math.Round(anger / 25)];
+    }
+
 
     //A refaire
 
