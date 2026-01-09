@@ -61,12 +61,12 @@ public class PickupMovement : MonoBehaviour
 
     private void Move()
     {
-        velocity = (transform.position - lastPosition) / Time.deltaTime;
+        velocity = (transform.position - lastPosition) / Time.fixedDeltaTime;
         lastPosition = transform.position;
 
         Vector3 pos = spline.EvaluatePosition(t);
         Vector3 pos2 = spline.EvaluatePosition(t + 0.1f);
-        t += Time.deltaTime * speed / 100;
+        t += Time.fixedDeltaTime * speed / 100;
         transform.position = pos;
         transform.LookAt(pos2);
     }
