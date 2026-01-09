@@ -15,8 +15,8 @@ public class GameOverManager : MonoBehaviour
     void Start()
     {
         menu = GetComponent<UIDocument>();
-        restartButton = menu.rootVisualElement.Q<Button>("RestartButton");
-        if (restartButton == null) Debug.Log("MAIS OU ETRE STARTBUTTON");
+        restartButton = menu.rootVisualElement.Q<Button>("StartButton");
+        if (restartButton == null) Debug.Log("MAIS OU ETRE RESTARTBUTTON");
 
         quitButton = menu.rootVisualElement.Q<Button>("QuitButton");
         if (quitButton == null) Debug.Log("MAIS OU ETRE EXITBUTTON");
@@ -37,15 +37,15 @@ public class GameOverManager : MonoBehaviour
     void OnStartBtnClick()
     {
         Debug.Log("START");
-        SceneManager.LoadScene("BlockOut");
+        SceneManager.LoadScene("Menu");
     }
 
     void OnExitBtnClick()
     {
         Debug.Log("EXIT");
-        
-        Application.Quit();
+
         UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();
 
     }
 }
