@@ -55,6 +55,14 @@ public class Cookable : MonoBehaviour
         cookPoint += value;
     }
 
+    public void CookSound(bool x)
+    {
+        if(x)
+            transform.GetComponent<AudioSource>().Play();
+        else
+            transform.GetComponent<AudioSource>().Stop();
+    }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(transform.position, 0.1f);

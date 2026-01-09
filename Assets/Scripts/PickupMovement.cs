@@ -4,15 +4,21 @@ using UnityEngine.UIElements;
 
 public class PickupMovement : MonoBehaviour
 {
+    public static PickupMovement instance = null;
     [SerializeField] private SplineContainer spline;
-    [SerializeField] private float baseSpeed;
+    public float baseSpeed;
 
     public Vector3 velocity;
 
     private Vector3 lastPosition;
     private float t = 0f;
     private bool canMove = true;
-    private float speed;
+    public float speed;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
