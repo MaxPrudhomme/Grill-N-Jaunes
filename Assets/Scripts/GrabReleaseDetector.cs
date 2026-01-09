@@ -21,6 +21,7 @@ public class GrabReleaseDetector : MonoBehaviour
 
     void OnDisable()
     {
+        grabInteractable.selectEntered.RemoveListener(OnGrab);
         grabInteractable.selectExited.RemoveListener(OnReleased);
     }
 
@@ -44,7 +45,7 @@ public class GrabReleaseDetector : MonoBehaviour
                 Debug.Log("test");
                 Debug.Log("velocity before: " + rb.linearVelocity);
                 //rb.linearVelocity -= pickupMovement.velocity;
-                transform.SetParent(pickupMovement.transform);
+                transform.SetParent(null);
                 Debug.Log("velocity after: " + rb.linearVelocity);
             }
             //if (transform.parent.TryGetComponent<Rigidbody>(out var rigidbody))

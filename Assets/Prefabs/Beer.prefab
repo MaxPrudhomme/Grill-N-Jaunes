@@ -202,8 +202,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69c02f0158ac6694bb9b82cac1258532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GrabReleaseDetector
-  playableArea: {fileID: 0}
-  threshold: 2
 --- !u!1 &8058919209898196035
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,10 +253,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.06
-  m_Height: 0.25
+  m_Radius: 0.055691555
+  m_Height: 0.24526301
   m_Direction: 1
-  m_Center: {x: 0, y: 0.12, z: 0}
+  m_Center: {x: 0, y: 0.10685815, z: 0.00017234683}
 --- !u!1001 &5630360854780376256
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -4,19 +4,19 @@ using UnityEngine.UIElements;
 
 public class PickupMovement : MonoBehaviour
 {
-    //[SerializeField] private Transform[] track;
-    //[SerializeField] private Transform map;
     [SerializeField] private SplineContainer spline;
     [SerializeField] private float baseSpeed;
 
     public Vector3 velocity;
 
+    private Vector3 lastPosition;
     private float t = 0f;
     private bool canMove = true;
     private float speed;
 
     private void Start()
     {
+        lastPosition = transform.position;
         speed = baseSpeed;
     }
 
@@ -27,7 +27,9 @@ public class PickupMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.gameObject.TryGetComponent<Rigidbody>(out var _)) return;
+        Debug.Log("----- test enter");
+        if (!other.transform.parent.TryGetComponent<Rigidbody>(out var _)) return;
+        Debug.Log("----- test enter 2");
 
         Transform parent = other.transform.parent;
         if (parent)
@@ -42,7 +44,9 @@ public class PickupMovement : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (!other.gameObject.TryGetComponent<Rigidbody>(out var _)) return;
+        Debug.Log("----- test enter");
+        if (!other.transform.parent.TryGetComponent<Rigidbody>(out var _)) return;
+        Debug.Log("----- test enter 2");
 
         Transform parent = other.transform.parent;
         if (parent)
@@ -57,9 +61,12 @@ public class PickupMovement : MonoBehaviour
 
     private void Move()
     {
+        velocity = (transform.position - lastPosition) / Time.fixedDeltaTime;
+        lastPosition = transform.position;
+
         Vector3 pos = spline.EvaluatePosition(t);
         Vector3 pos2 = spline.EvaluatePosition(t + 0.1f);
-        t += Time.deltaTime * speed / 100;
+        t += Time.fixedDeltaTime * speed / 100;
         transform.position = pos;
         transform.LookAt(pos2);
     }

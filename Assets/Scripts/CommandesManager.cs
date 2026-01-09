@@ -157,6 +157,9 @@ public class CommandeManager: MonoBehaviour
 
             anger -= 5;
             if (anger < 0) anger = 0;
+        }else
+        {
+            anger += 5;
         }
     }
 
