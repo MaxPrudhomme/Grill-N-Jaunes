@@ -625,6 +625,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &46916715
 Animator:
   serializedVersion: 7
@@ -2012,6 +2013,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &156581455
 Animator:
   serializedVersion: 7
@@ -2382,6 +2384,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &180197370
 Animator:
   serializedVersion: 7
@@ -3092,6 +3095,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &188700233
 Animator:
   serializedVersion: 7
@@ -4036,6 +4040,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &229212492
 Animator:
   serializedVersion: 7
@@ -5041,6 +5046,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &272085959
 Animator:
   serializedVersion: 7
@@ -5453,6 +5459,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &278871466
 Animator:
   serializedVersion: 7
@@ -5854,6 +5861,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &306242313
 Animator:
   serializedVersion: 7
@@ -6555,6 +6563,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &339053403
 Animator:
   serializedVersion: 7
@@ -6606,6 +6615,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &340605750
 Animator:
   serializedVersion: 7
@@ -7054,6 +7064,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &343306447
 Animator:
   serializedVersion: 7
@@ -7759,6 +7770,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &351501468
 Animator:
   serializedVersion: 7
@@ -8281,6 +8293,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &364318938
 Animator:
   serializedVersion: 7
@@ -9327,6 +9340,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &392370413
 Animator:
   serializedVersion: 7
@@ -10016,6 +10030,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &395526753
 Animator:
   serializedVersion: 7
@@ -11571,6 +11586,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &441091804
 Animator:
   serializedVersion: 7
@@ -12636,6 +12652,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &459114240
 Animator:
   serializedVersion: 7
@@ -14438,6 +14455,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &572552567
 Animator:
   serializedVersion: 7
@@ -14489,6 +14507,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &576154446
 Animator:
   serializedVersion: 7
@@ -14957,6 +14976,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &581234188
 Animator:
   serializedVersion: 7
@@ -15242,6 +15262,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &595200736
 Animator:
   serializedVersion: 7
@@ -16550,6 +16571,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &661284021
 Animator:
   serializedVersion: 7
@@ -18304,6 +18326,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &735774738
 Animator:
   serializedVersion: 7
@@ -20396,6 +20419,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &797642019
 Animator:
   serializedVersion: 7
@@ -22359,6 +22383,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &850267387
 Animator:
   serializedVersion: 7
@@ -23247,6 +23272,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &901391533
 Animator:
   serializedVersion: 7
@@ -25071,6 +25097,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &970611146
 Animator:
   serializedVersion: 7
@@ -25557,6 +25584,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &979911591
 Animator:
   serializedVersion: 7
@@ -26957,6 +26985,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &1026088175
 Animator:
   serializedVersion: 7
@@ -27070,6 +27099,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &1029266980
 Animator:
   serializedVersion: 7
@@ -27683,6 +27713,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &1064218231
 Animator:
   serializedVersion: 7
@@ -28549,6 +28580,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &1097805051
 Animator:
   serializedVersion: 7
@@ -29372,6 +29404,7 @@ MonoBehaviour:
   difficulty: 3
   maxCommandes: 1
   player: {fileID: 441087508}
+  commandeParent: {fileID: 0}
 --- !u!4 &1140099472
 Transform:
   m_ObjectHideFlags: 0
@@ -29622,6 +29655,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &1151093164
 Animator:
   serializedVersion: 7
@@ -31662,6 +31696,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &1224846524
 Animator:
   serializedVersion: 7
@@ -32147,6 +32182,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &1233172380
 Animator:
   serializedVersion: 7
@@ -34584,6 +34620,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &1340119523
 Animator:
   serializedVersion: 7
@@ -35387,6 +35424,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &1392506992
 Animator:
   serializedVersion: 7
@@ -36411,6 +36449,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &1435071473
 Animator:
   serializedVersion: 7
@@ -38552,6 +38591,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &1524514763
 Animator:
   serializedVersion: 7
@@ -38863,6 +38903,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &1537706600
 Animator:
   serializedVersion: 7
@@ -40184,6 +40225,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &1603988619
 Animator:
   serializedVersion: 7
@@ -40562,12 +40604,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13b17afade4c313488dc320b200df883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickupMovement
-  track:
-  - {fileID: 2069858796}
-  - {fileID: 2100059648}
-  - {fileID: 1509494029}
-  map: {fileID: 894539465}
   spline: {fileID: 1858949606}
+  baseSpeed: 0
   velocity: {x: 0, y: 0, z: 0}
 --- !u!4 &1628137007
 Transform:
@@ -41098,6 +41136,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &1629314967
 Animator:
   serializedVersion: 7
@@ -41838,6 +41877,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &1663493181
 Animator:
   serializedVersion: 7
@@ -41920,9 +41960,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13b17afade4c313488dc320b200df883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickupMovement
-  track: []
-  map: {fileID: 0}
   spline: {fileID: 0}
+  baseSpeed: 0
   velocity: {x: 0, y: 0, z: 0}
 --- !u!65 &1663755859
 BoxCollider:
@@ -42921,6 +42960,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &1715414406
 Animator:
   serializedVersion: 7
@@ -43669,6 +43709,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &1757530580
 Animator:
   serializedVersion: 7
@@ -45382,6 +45423,192 @@ Transform:
   - {fileID: 1674362176}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1847519373
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1847519379}
+  - component: {fileID: 1847519378}
+  - component: {fileID: 1847519377}
+  - component: {fileID: 1847519376}
+  - component: {fileID: 1847519375}
+  - component: {fileID: 1847519374}
+  m_Layer: 5
+  m_Name: GameOver
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1847519374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847519373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b71eb54cfb1ed44a73ddb12a16192b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+--- !u!114 &1847519375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847519373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 115f1a2a50d85cd4b9d6dad4c95622be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Filtering.XRPokeFilter
+  m_Interactable: {fileID: 1847519376}
+  m_PokeCollider: {fileID: 1847519377}
+  m_PokeConfiguration:
+    m_UseConstant: 1
+    m_ConstantValue:
+      m_PokeDirection: 3
+      m_InteractionDepthOffset: 0
+      m_EnablePokeAngleThreshold: 1
+      m_PokeAngleThreshold: 45
+    m_Variable: {fileID: 0}
+--- !u!114 &1847519376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847519373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable
+  m_InteractionManager: {fileID: 0}
+  m_Colliders: []
+  m_InteractionLayers:
+    m_Bits: 1
+  m_DistanceCalculationMode: 1
+  m_SelectMode: 0
+  m_FocusMode: 1
+  m_CustomReticle: {fileID: 0}
+  m_AllowGazeInteraction: 0
+  m_AllowGazeSelect: 0
+  m_OverrideGazeTimeToSelect: 0
+  m_GazeTimeToSelect: 0.5
+  m_OverrideTimeToAutoDeselectGaze: 0
+  m_TimeToAutoDeselectGaze: 3
+  m_AllowGazeAssistance: 0
+  m_FirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstFocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastFocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Activated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Deactivated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
+  m_StartingInteractionStrengthFilters: []
+--- !u!65 &1847519377
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847519373}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.37, y: 1.8299999, z: 0.00000015998367}
+  m_Center: {x: 0, y: -0.000000059604645, z: -7.1054274e-15}
+--- !u!114 &1847519378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847519373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.UIElements.UIDocument
+  m_PanelSettings: {fileID: 11400000, guid: e7496767898f08e45b3e15f384905b23, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 3a2d441cd4e08ab45ba4b6dae82aed61, type: 3}
+  m_SortingOrder: 0
+  m_Position: 0
+  m_WorldSpaceSizeMode: 1
+  m_WorldSpaceWidth: 13.19
+  m_WorldSpaceHeight: 208.5
+  m_PivotReferenceSize: 0
+  m_Pivot: 0
+  m_WorldSpaceCollider: {fileID: 0}
+--- !u!4 &1847519379
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847519373}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.0000000745058, z: -0, w: -1}
+  m_LocalPosition: {x: -10.31, y: 5.23, z: 3.4200013}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -360, z: 0}
 --- !u!1001 &1850201162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46862,6 +47089,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &1897195637
 Animator:
   serializedVersion: 7
@@ -46991,6 +47219,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &1902427294
 Animator:
   serializedVersion: 7
@@ -47042,6 +47271,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &1913937587
 Animator:
   serializedVersion: 7
@@ -47459,6 +47689,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &1947479208
 Animator:
   serializedVersion: 7
@@ -47981,6 +48212,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &1957021585
 Animator:
   serializedVersion: 7
@@ -48351,6 +48583,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &1960474538
 Animator:
   serializedVersion: 7
@@ -48738,6 +48971,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &1994021330
 Animator:
   serializedVersion: 7
@@ -49011,6 +49245,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &2009437222
 Animator:
   serializedVersion: 7
@@ -52019,6 +52254,7 @@ MonoBehaviour:
   top: {fileID: 0}
   topMat: []
   signe: 0
+  walking: 1
 --- !u!95 &2114341786
 Animator:
   serializedVersion: 7
@@ -52848,3 +53084,4 @@ SceneRoots:
   - {fileID: 1628137007}
   - {fileID: 460667849}
   - {fileID: 1858949607}
+  - {fileID: 1847519379}
