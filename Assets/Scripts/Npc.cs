@@ -12,6 +12,7 @@ public class Npc : MonoBehaviour
     [SerializeField] private bool signe = false;
     [SerializeField] private bool walking = true;
     private Animator anim;
+    private float speed;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -37,8 +38,8 @@ public class Npc : MonoBehaviour
             }
 
         }
-
-        anim.speed = Random.Range(0.9f, 1.1f);
+        speed = Random.Range(-0.05f, 0.05f);
+        
 
         hair.material = hairMat[Random.Range(0,hairMat.Length)];
         pant.material = pantMat[Random.Range(0, pantMat.Length)];
@@ -48,7 +49,21 @@ public class Npc : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (CommandeManager.instance.gameIsOver)
+        {
+            anim.speed = speed + 1f;
+            if (signe)
+                anim.Play("Standing Torch Idle 01");
+            else
+            {
+                anim.Play("Breathing Idle");
+                Barks();
+            }
+        }
+        else
+            anim.speed = speed + PickupMovement.instance.speed;
+
+
     }
 
     private void Barks()

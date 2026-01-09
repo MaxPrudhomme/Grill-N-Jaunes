@@ -15,6 +15,22 @@ public class Barbecue : MonoBehaviour
         
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Cookable"))
+        {
+            other.transform.parent.GetComponent<Cookable>().CookSound(true);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Cookable"))
+        {
+            other.transform.parent.GetComponent<Cookable>().CookSound(false);
+        }
+    }
+
     private void OnTriggerStay(Collider collision)
     {
         if (collision.gameObject.CompareTag("Cookable"))

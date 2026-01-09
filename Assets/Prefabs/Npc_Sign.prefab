@@ -212,6 +212,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Npc_Sign
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8f92450920e431045a16f34d26c22329, type: 3}
+      propertyPath: m_TagString
+      value: Npc
+      objectReference: {fileID: 0}
     - target: {fileID: 2559285840627121667, guid: 8f92450920e431045a16f34d26c22329, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -13.187301
@@ -321,6 +325,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8f92450920e431045a16f34d26c22329, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8437603617297541651}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8f92450920e431045a16f34d26c22329, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7510935597905885337}
   m_SourcePrefab: {fileID: 100100000, guid: 8f92450920e431045a16f34d26c22329, type: 3}
 --- !u!1 &176742543493897578 stripped
 GameObject:
@@ -378,6 +385,30 @@ MonoBehaviour:
   - {fileID: -1293887620268828351, guid: 3e8eb1413c8cb2b42b0fffa6707fe3bc, type: 3}
   - {fileID: -1293887620268828351, guid: 333350d63309751479caf489352f4e91, type: 3}
   signe: 1
+  walking: 1
+--- !u!136 &7510935597905885337
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176742543493897578}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.64
+  m_Height: 5.2
+  m_Direction: 1
+  m_Center: {x: 0, y: 2.63, z: 0}
 --- !u!137 &2151753508602805620 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: -7823293702887809713, guid: 8f92450920e431045a16f34d26c22329, type: 3}
