@@ -1,6 +1,8 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/MenuStyle.uss?fileID=7433441132597879392&amp;guid=35df12fea0fe1ac4b9287da7e854facb&amp;type=3#MenuStyle" />
     <ui:VisualElement style="flex-grow: 1; justify-content: center; align-self: center; align-items: center; width: 337px;">
-        <ui:Label text="Game Over" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/RubikMarkerHatch-Regular.ttf?fileID=12800000&amp;guid=1ee45efcd9530a44095573b674aadb02&amp;type=3#RubikMarkerHatch-Regular&quot;); -unity-font-style: bold-and-italic; color: rgb(205, 0, 0); font-size: 75px;" />
+        <ui:Label text="Game Over&#10;" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/RubikMarkerHatch-Regular.ttf?fileID=12800000&amp;guid=1ee45efcd9530a44095573b674aadb02&amp;type=3#RubikMarkerHatch-Regular&quot;); -unity-font-style: bold-and-italic; color: rgb(218, 0, 0); font-size: 75px; -unity-text-align: upper-center;" />
+        <ui:Button text="Recommencer" name="StartButton" class="buttonstyle" style="width: 209px; color: rgb(255, 255, 255); -unity-font-style: bold; -unity-font-definition: url(&quot;project://database/Assets/Fonts/RubikBurned-Regular.ttf?fileID=12800000&amp;guid=a595f0c6f70c13141a1ca6026ece0752&amp;type=3#RubikBurned-Regular&quot;);" />
+        <ui:Button text="Quitter" name="QuitButton" class="buttonstyle" style="width: 205px; -unity-font-style: bold; color: rgb(255, 242, 242);" />
     </ui:VisualElement>
 </ui:UXML>

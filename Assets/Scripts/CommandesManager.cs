@@ -3,12 +3,16 @@ using System.Collections.Generic;
 
 public class CommandeManager: MonoBehaviour
 {
+    public static CommandeManager instance;
+
     public CommandeManagerScriptableObject commandeManagerSO;
     public GameObject commandePrefab;
     public float difficulty;
     public int maxCommandes;
     public GameObject player;
     public Transform commandeParent;
+    public GameObject GameOverUI;
+    public bool gameIsOver = false;
     private GameObject commande;
     private int nbCommandes = 0;
     private float maxAnger;
@@ -28,6 +32,18 @@ public class CommandeManager: MonoBehaviour
 
     private float timer = 0f;
 
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -165,6 +181,8 @@ public class CommandeManager: MonoBehaviour
 
     private void gameOver()
     {
+        gameIsOver = true;
+        GameOverUI.SetActive(true);
         Debug.Log("GameOver");
         Destroy(gameObject);
 
